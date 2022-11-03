@@ -4,55 +4,44 @@ public class AnimalsActingSpecifically {
     void run () {
 
         //Udprintelse af overskrift
-        System.out.println("_____________________________________");
+        System.out.println("__________________________________________________________");
         System.out.println("Animal acting specifically");
-        System.out.println("_____________________________________");
+        System.out.println("___________________________________________________________");
 
         // Oprettelse af araylist
-        ArrayList <String> Animals = new ArrayList <>();
+        ArrayList <Animal>animals = new ArrayList <>();
 
         //Oprettele af instancer, samt give dem navne og add til arraylisten.
         Dog b = new Dog();
         b.setName("Brown");
-        Animals.add(0, b.getName());
+        animals.add(b);
 
         Dog br = new Dog();
         br.setName("Brownie");
-        Animals.add(1, br.getName());
+        animals.add(br);
 
         Cat v = new Cat();
         v.setName("Valentino");
-        Animals.add(2, v.getName());
+        animals.add(v);
 
         Cat g = new Cat();
         g.setName("Gucci");
-        Animals.add(3, g.getName());
+        animals.add(g);
 
+        //Printning af instancere samt tilføje beg og scrach metoder, ved hjælp af instanceof.
+        for (int i = 0; i < animals.size(); i++) {
+            Animal a = animals.get(i);
+            System.out.println(a);
+            if (a instanceof Dog) {
+                ((Dog) animals.get(i)).beg();
+            }
 
-        System.out.print(Animals.get(0) + ", " );
-        if (b instanceof Dog){
-            b.makeSound();
-            b.beg();
-        }
-
-        System.out.print(Animals.get(1)+ ", ");
-        if (br instanceof Dog){
-            br.makeSound();
-            br.beg();
-        }
-
-        System.out.print(Animals.get(2)+ ", ");
-        if (v instanceof Cat){
-            v.makeSound();
-            v.scratch();
-        }
-
-        System.out.print(Animals.get(3) + ", ");
-        if (g instanceof Cat){
-            g.makeSound();
-            g.scratch();
+            else if (animals.get(i) instanceof Cat) {
+                ((Cat) animals.get(i)).scratch();
+            }
         }
     }
+
 
     public static void main(String[] args) {
         new AnimalsActingSpecifically().run();

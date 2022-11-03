@@ -13,7 +13,14 @@ public abstract class Animal {
         return name;
     }
 
-    public void makeSound () {
-        System.out.println("Animal sound");
+    public String makeSound () {
+        return "Animal sound";
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name = '" + name + '\'' + "  "+  "Animal sound = "+   makeSound() +
+                '}';
     }
 }

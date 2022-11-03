@@ -3,14 +3,16 @@ public class Dog extends Animal{
     public Dog () {
       super();
     }
-
-    public void makeSound () {
-        System.out.println("Woof Woof");
+    public String makeSound () {
+    return "Woof Woof";
     }
 
+    public String beg () {
+        return "Begging";
+    }
 
-    public void beg () {
-        System.out.println("Begging");
-
+    @Override
+    public String toString() {
+        return super.toString() + " " + beg();
     }
 }

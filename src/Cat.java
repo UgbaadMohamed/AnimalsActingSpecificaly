@@ -1,14 +1,21 @@
+import javax.xml.parsers.SAXParser;
+
 public class Cat extends Animal{
 
     public Cat () {
         super();
     }
 
-    public void makeSound () {
-        System.out.println("Meow Meow");
+    public String makeSound () {
+       return "Meow Meow";
     }
-    public void scratch () {
-        System.out.println("Scratching");
+    public String scratch () {
+        return "Scratching";
+
     }
 
+    @Override
+    public String toString() {
+        return super.toString() +" " +  scratch();
+    }
 }
